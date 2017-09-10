@@ -1,0 +1,21 @@
+.uploader_input {
+    display: none;
+}
+
+.uploader_button {
+    padding: 10px 25px 10px 25px;
+    width: 250px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: rgb(7,208,120);
+    color: #fefefe;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.uploader_drag,
+.uploader_uploading,
+.uploader_success,
+.uploader_error {
+    display: none;
+}
