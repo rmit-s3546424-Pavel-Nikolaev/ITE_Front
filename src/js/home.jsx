@@ -1,4 +1,5 @@
 import React from 'react';
+import Tablature from './tablature.js';
 
 export default class Home extends React.Component {
 
@@ -17,10 +18,9 @@ export default class Home extends React.Component {
     render(){
 
         return(
-         <div>
-
-
-         </div>
+            <div className="tablature">
+                <Tablature />
+            </div>
         )
     }
 }
