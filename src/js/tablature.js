@@ -12,8 +12,13 @@ import vextab from '../../node_modules/vextab/releases/vextab-div';
 
 export default class Tablature extends React.Component {
     componentDidMount() {
+        // The notation being displayed can be created in a couple of ways. This can be
+        // programatically using methods and objects from the VexFlow class or, 
+        // as is here, a string can be parsed using the VexTab notation.
+
         // Whole Vextab object: vextab
         // Vextab Div: vextab.Div
+        // Vex.Flow namespace: vextab.Flow
         const VexTab = vextab.VexTab;
         const Artist = vextab.Artist;
         const Renderer = vextab.Flow.Renderer;
@@ -32,10 +37,7 @@ export default class Tablature extends React.Component {
 
         try {
             // Parse VexTab music notation passed in as a string.
-            vextabParser.parse(`
-                tabstave notation=true
-                notes 4-5-6/3 10/4
-            `);
+            vextabParser.parse(this.props.notation);
 
             // Render notation onto canvas.
             artist.render(renderer);

@@ -19,7 +19,10 @@ export default class Home extends React.Component {
 
         return(
             <div className="tablature">
-                <Tablature />
+                <Tablature notation={`
+                    tabstave notation=true tablature=false
+                    notes Cn-D-E/4 F#/5
+                `} />
             </div>
         )
     }
