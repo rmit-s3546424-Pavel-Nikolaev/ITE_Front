@@ -29,13 +29,13 @@ export default class Navbar extends React.Component {
                 <div className="navbar">
                     <div className="navbar-left">
                         <ul className="nav-list">
-                            <li><Link to="/Home" className="navLinks">Home</Link></li>
-                             <li><Link to="/Upload" className="navLinks">Uploader</Link></li>
+                            <li><Link to="/home" className="navLinks">Home</Link></li>
+                             <li><Link to="/upload" className="navLinks">Uploader</Link></li>
                         </ul>
                     </div>
                     <div className="navbar-right">
                         <ul className="nav-list-r">
-                            <li><a className="navLinks">Login</a></li>
+                            <li><Link to="/login" className="navLinks">Login</Link></li>
                         </ul>
                     </div>
                 </div>

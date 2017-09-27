@@ -1,35 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import App from './js/app.js';
-import Navbar from './js/navbar.jsx';
-import Home from './js/home.jsx';
+import App from './js/app';
+import Home from './js/home';
+import Login from './js/login';
+import Uploader from './js/uploader';
+
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
-import './css/main.css';
-
-const Main = () => (
-    <main>
-        <Switch>
-            <Route exact path='/'>
-                <Redirect to="/Home" push/>
-            </Route>
-            <Route exact path='/Home' component={Home}/>
-            <Route exact path='/Upload' component={App}/>
-        </Switch>
-    </main>
-);
-
-const APP = () => (
-    <div>
-        <Navbar />
-        <Main />
-    </div>
-);
+import './css/index.css';
 
 ReactDOM.render((
     <BrowserRouter >
-        <APP />
+        <main>
+            <Switch>
+                <Route exact path='/' component={App} />
+                <Route exact path='/home' component={Home} />
+                <Route exact path='/login' component={Login} />
+                <Route path='/upload' component={Uploader}  />
+            </Switch>
+        </main>
     </BrowserRouter>
 ), document.getElementById('root'));
 registerServiceWorker();
