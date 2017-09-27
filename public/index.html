@@ -1,23 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-   <!--  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
-    <title>React App</title>
-  </head>
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../src/css/main.css">
+        <!--
+        manifest.json provides metadata used when your web app is added to the
+        homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+            -->
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+        <!--  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
+        <title>TabbR- Musicians BFF</title>
+    </head>
+    <body>
+    <br>
+    <h1>TabbR</h1>
+    <center>
+        <div class="container">
+            <div id="slider">
+                <ul class="slides">
+                    <li class="slide"><img src="slide/slider1.jpg"></li>
+                    <li class="slide"><img src="slide/slider2.jpg"></li>
+                    <li class="slide"><img src="slide/slider3.jpg"></li>
+                    <li class="slide"><img src="slide/slider4.jpg"></li>
+                    <li class="slide"><img src="slide/slider1.jpg"></li>
+                </ul>
+            </div>
+        </div>
+    </center>
+    <h3>Welcome to TabbR. Every musicians best friend</h3>
+    <br>Here at TabbR we aim to provide our users with a fast and easy way to convert their sheet music into tablature. Simply take a photo of your sheet music and upload it. Once on our system we will generate the correct tablature for your instrument.
     <noscript>
-      You need to enable JavaScript to run this app.
+        You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
     <div id='loadingScreen'><div class='loader' id='loader'></div></div>
-  </body>
+    <script src="slide/jquery.js"></script>
+    <script src="slide/featured_jquery.js"></script>
+    </body>
 </html>

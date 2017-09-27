@@ -9,11 +9,22 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: .1em
+    font-family: "Avant Garde", Avantgarde;
+    letter-spacing: .1em;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
 }
 
+h1 {
+    color: rgb(66, 244, 200);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(7, 208, 120);
+}
 
 h3{
     color: rgb(7, 208, 120);
@@ -278,3 +289,25 @@ h3{
         transform: rotate(0deg);
     }
 }
+
+#slider {
+    width: 720px;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+    #slider .slides {
+        display: block;
+        width: 6000px;
+        height: 400px;
+        margin: 0;
+        padding: 0;
+    }
+
+    #slider .slide {
+        float: left;
+        list-style-type: none;
+        width: 720px;
+        height: 400px;
+    }
