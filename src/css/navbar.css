@@ -1,0 +1,60 @@
+#nav-site {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+
+    background-color: #333333;
+}
+
+.nav-container {
+    display: flex;
+    max-width: 80%;
+    flex-grow: 1;
+}
+
+.nav-right {
+    margin-left: auto;
+}
+
+/* Push nav-right items together */
+.nav-right + .nav-right {
+    margin-left: 0;
+}
+
+.nav-item {
+    position: relative; /* For hover effect */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center;     /* Center text vertically */
+    flex-basis: 200px;
+
+    font-size: 17px;
+    font-family: arial;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: silver;
+
+    transition: color, background-color 0.3s; /* Gets prefixed by build pipeline */
+}
+
+.nav-item:hover, .nav-item:focus {
+    color: white;
+    background-color: #404040;
+}
+
+/* For hover effect */
+.nav-item::after {
+    position: absolute;
+    background: rgb(7, 208, 120);
+    content: '';
+    bottom: 0;
+    height: 0;
+    left: 0;
+    width: 100%;
+
+    transition: height 300ms;
+}
+
+.nav-item:hover::after, .nav-item:focus::after {
+    height: 5px;
+}
