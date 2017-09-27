@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
-import {getDocumentS3Request, buildS3RequestData} from './utils/utilities';
+import React, { Component } from 'react';
+import { getDocumentS3Request, buildS3RequestData } from './utils/utilities';
 
 class Uploader extends Component {
     constructor(props) {
         super(props);
         this.onFileChange = this.onFileChange.bind(this);
         this.onUpload = this.onUpload.bind(this);
+        this.credentials = localStorage.getItem('session');
         this.state = {uploading: false, success: false, failure: false};
     }
 
@@ -21,7 +22,7 @@ class Uploader extends Component {
 
     onFileChange(event) {
         this.setState({uploading: true, success: false, failure: false});
-        if (event.target.value.length == 0) {
+        if (event.target.value.length === 0) {
             this.setState({uploading: false, success: false, failure: false});
             return false;
         }
