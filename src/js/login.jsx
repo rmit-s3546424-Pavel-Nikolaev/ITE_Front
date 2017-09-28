@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Config as AWSConfig, CognitoIdentityCredentials } from 'aws-sdk';
-import { CognitoUserPool, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
-import { Redirect } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Config as AWSConfig, CognitoIdentityCredentials} from 'aws-sdk';
+import {CognitoUserPool, CognitoUser, AuthenticationDetails} from 'amazon-cognito-identity-js';
+import {Redirect} from 'react-router-dom';
 
 import settings from './utils/config';
 
@@ -30,11 +30,11 @@ class Login extends Component {
     }
 
     onEmailChange(event) {
-        this.setState({ email: event.target.value });
+        this.setState({email: event.target.value});
     }
 
     onPasswordChange(event) {
-        this.setState({ password: event.target.value });
+        this.setState({password: event.target.value});
     }
 
     onLogin(event) {
@@ -46,11 +46,11 @@ class Login extends Component {
             Password: password,
         });
 
-        const cognitoUser = new CognitoUser({ Username: email, Pool: pool });
+        const cognitoUser = new CognitoUser({Username: email, Pool: pool});
         cognitoUser.authenticateUser(credentials, {
             onSuccess: (session) => {
                 localStorage.setItem("session", JSON.stringify(session));
-                this.setState({ redirect: true });
+                this.setState({redirect: true});
             },
             onFailure: (error) => {
                 console.log(error);
@@ -70,30 +70,32 @@ class Login extends Component {
 
         return (
             <div id="login_container">
-                <h1>Log in to Tabs</h1>
-                <form id="login" onSubmit={this.onLogin}>
-                    <div className="input icon">
-                        <input id="email"
-                            className="field"
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.onEmailChange}
-                            placeholder="Email" />
-                        <i></i>
-                    </div>
-                    <div className="input icon">
-                        <input id="password"
-                            className="field"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.onPasswordChange}
-                            placeholder="Password" />
-                        <i></i>
-                    </div>
-                    <div className="input">
-                        <input className="button" value="Login" type="submit" />
-                    </div>
-                </form>
+                <div>
+                    <h1>Log in to Tabs</h1>
+                    <form id="login" onSubmit={this.onLogin}>
+                        <div className="input icon">
+                            <input id="email"
+                                   className="field"
+                                   type="email"
+                                   value={this.state.email}
+                                   onChange={this.onEmailChange}
+                                   placeholder="Email"/>
+                            <i></i>
+                        </div>
+                        <div className="input icon">
+                            <input id="password"
+                                   className="field"
+                                   type="password"
+                                   value={this.state.password}
+                                   onChange={this.onPasswordChange}
+                                   placeholder="Password"/>
+                            <i></i>
+                        </div>
+                        <div className="input">
+                            <input className="button" value="Login" type="submit"/>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

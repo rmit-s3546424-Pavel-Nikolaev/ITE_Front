@@ -25,13 +25,12 @@ export default class Navbar extends React.Component {
         //     link = (<li><Link to="/login" className="navLinks">Login</Link></li>);
         // }
         return (
-            <nav id="nav-site">
-                <div className="nav-container">
-                    <Link to="/home" className="nav-item">Home</Link>
-                    <Link to="/upload" className="nav-item">Uploader</Link>
-                    <Link to="/login" className="nav-item nav-right">Login</Link>
-                </div>
-            </nav>
+            <div className="nav-container">
+                <Link to="/home" className="nav-item">Home</Link>
+                <a className="nav-item">About</a>
+                <Link to="/upload" className="nav-item">Uploader</Link>
+                <Link to="/login" className="nav-item">Login</Link>
+            </div>
         )
     }
 }

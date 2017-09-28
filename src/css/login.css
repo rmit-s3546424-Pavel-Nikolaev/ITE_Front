@@ -9,12 +9,13 @@ h1 {
 
 .input input {
     margin: 0 0 10px 0;
-    border-radius: 6px;
     height: 50px;
     width: 100%;
     font-size: 19px;
     box-shadow: none;
     box-sizing: border-box;
+      font-family: 'Pathway Gothic One', sans-serif;
+    text-transform: uppercase;
 }
 
 .field {
@@ -24,16 +25,19 @@ h1 {
 
 .button {
     color: white;
-    font-style: bold;
+    font-weight: bold;
     border: none;
     background-color: #5F5F5F;
     border-bottom: 3px solid #222222;
 }
 
 #login_container {
+      font-family: 'Pathway Gothic One', sans-serif;
+    text-transform: uppercase;
+    height: 600px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
