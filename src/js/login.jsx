@@ -21,7 +21,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            redirect: false
+            isAuthenticated: false
         };
 
         this.onEmailChange = this.onEmailChange.bind(this);
@@ -49,11 +49,12 @@ class Login extends Component {
         const cognitoUser = new CognitoUser({Username: email, Pool: pool});
         cognitoUser.authenticateUser(credentials, {
             onSuccess: (session) => {
-                localStorage.setItem("session", JSON.stringify(session));
-                this.setState({redirect: true});
+                localStorage.setItem("session", session.idToken.jwtToken);
+                this.setState({isAuthenticated: true});
             },
             onFailure: (error) => {
                 console.log(error);
+                this.setState({isAuthenticated: false});
             },
             newPasswordRequired: (userAttributes, requiredAttributes) => {
                 delete userAttributes.email_verified;
@@ -64,7 +65,7 @@ class Login extends Component {
     }
 
     render() {
-        if (this.state.redirect) {
+        if (this.state.isAuthenticated) {
             return <Redirect to="/"/>;
         }
 

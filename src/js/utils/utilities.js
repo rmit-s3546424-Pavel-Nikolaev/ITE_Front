@@ -1,24 +1,23 @@
-export function getDocumentS3Request(host, api_key, body={}) {
-    const headers = new Headers();
-    headers.append("X-Api-Key", api_key);
+import axios from "axios";
+
+export function getDocumentS3Request(host, credentials, body={}) {
     const params = { 
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(body)
+        method: 'post',
+        url: `${host}/upload`,
+        headers: {'Authorization': credentials},
+        data: JSON.stringify(body)
     };
 
-    return new Request(`${host}/upload`, params);
+    return new axios.request(params);
 }
 
 export function buildS3RequestData(path, file) {
-    const headers = new Headers();
-    headers.append('Content-Type', 'binary/octet-stream');
-
     const params = {
-        method: 'PUT',
-        headers: headers,
-        body: file
+        method: 'put',
+        url: path,
+        headers: {'Content-Type': 'binary/octet-stream'},
+        data: file
     };
 
-    return new Request(path, params);
+    return new axios.request(params);
 }
