@@ -33,7 +33,7 @@ class Uploader extends Component {
         else{
             const errors = document.getElementById("errorDiv");
             clearMsg();
-             errors.insertAdjacentHTML("beforeend","<p class='errorMsg'>" + "Please login to upload files" + "</p>");
+             errors.insertAdjacentHTML("beforeend","<p class='errorMsg'>Please login to upload files</p>");
             showMsg();
         }
     }
@@ -79,12 +79,14 @@ class Uploader extends Component {
         }
 
         let content = null;
-        if (this.state.uploading) {
+         if (this.state.uploading) {
             document.getElementById("root").className = "blur";
+            document.getElementById('loader').className = "loader";
             document.getElementById("loadingScreen").style.visibility = "visible";
         }
         else {
             document.getElementById("root").className = "";
+            document.getElementById('loader').className = "";
             document.getElementById("loadingScreen").style.visibility = "hidden";
         }
 
