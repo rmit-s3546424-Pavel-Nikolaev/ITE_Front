@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import App from './js/app';
 import Navbar from './js/navbar.jsx';
@@ -15,14 +15,12 @@ ReactDOM.render((
     <BrowserRouter >
         <div>
             <Navbar />
-            <main>
-                <Switch>
-                    <Route exact path='/' component={App} />
-                    <Route exact path='/home' component={Home} />
-                    <Route exact path='/login' component={Login} />
-                    <Route path='/upload' component={Uploader}  />
-                </Switch>
-            </main>
+            <Switch>
+                <Route exact path='/' component={App}/>
+                <Route exact path='/home' component={Home}/>
+                <Route exact path='/login' component={Login}/>
+                <Route path='/upload' component={Uploader}/>
+            </Switch>
         </div>
     </BrowserRouter>
 ), document.getElementById('root'));

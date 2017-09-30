@@ -17,7 +17,7 @@ export default class Home extends React.Component {
     render(){
 
         return(
-         <div>
+         <div id="mainMain">
             <div id="main" className="shadow">
                 <div id="massiveGoddamnLogo" className="shadow">
                     <h3 id="homeLogo">TABBR LOGO HERE</h3>

@@ -2,6 +2,7 @@
 html {
     width: 100%;
     height: 100vh;
+
 }
 
 body {
@@ -17,6 +18,12 @@ body {
 
 h3 {
     color: #07d078;
+}
+
+h1 {
+    margin: 50px 0 50px 0;
+    color: #222222;
+    text-align: center;
 }
 
 /*------------UPLOADER------------*/
@@ -103,6 +110,13 @@ h3 {
 
 /*---------- HOME PAGE --------------*/
 
+#root, #main, #mainMain, body {
+    overflow-y: overlay;
+}
+
+#mainMain {
+}
+
 #main {
     position: relative;
     overflow: hidden;
@@ -117,8 +131,8 @@ h3 {
 
 #main:after, .homeOption:after {
     content: "";
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -156,7 +170,7 @@ h3 {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    padding:20px;
+    padding: 20px;
 }
 
 #massiveGoddamnLogo {
@@ -183,12 +197,12 @@ h3 {
     overflow: hidden;
 }
 
-.homeOption h3{
+.homeOption h3 {
     position: absolute;
     z-index: 2;
 }
 
-.homeOption:before{
+.homeOption:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -207,16 +221,19 @@ h3 {
     filter: blur(5px);
 }
 
-#op1:before{
+#op1:before {
     background-image: url("../img/download.jpg");
 }
-#op2:before{
+
+#op2:before {
     background-image: url("../img/bass.jpg");
 }
-#op3:before{
+
+#op3:before {
     background-image: url("../img/theory.jpg");
 }
-#op4:before{
+
+#op4:before {
     background-image: url("../img/download.jpg");
 }
 
