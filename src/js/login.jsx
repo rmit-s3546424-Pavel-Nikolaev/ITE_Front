@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Config as AWSConfig, CognitoIdentityCredentials} from 'aws-sdk';
 import {CognitoUserPool, CognitoUser, AuthenticationDetails} from 'amazon-cognito-identity-js';
 import {Redirect} from 'react-router-dom';
-
+import {clearMsg, showMsg} from './utils/utilities'
 import settings from './utils/config';
 
 AWSConfig.region = settings.region;
@@ -21,7 +21,8 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            isAuthenticated: false
+            isAuthenticated: false,
+            loading: false
         };
 
         this.onEmailChange = this.onEmailChange.bind(this);
@@ -45,16 +46,22 @@ class Login extends Component {
             Username: email,
             Password: password,
         });
-
+        this.setState({
+            loading: true
+        });
         const cognitoUser = new CognitoUser({Username: email, Pool: pool});
         cognitoUser.authenticateUser(credentials, {
             onSuccess: (session) => {
                 localStorage.setItem("session", session.idToken.jwtToken);
-                this.setState({isAuthenticated: true});
+                this.setState({isAuthenticated: true, loading: false});
             },
             onFailure: (error) => {
+                const errors = document.getElementById("errorDiv");
+                clearMsg();
+                errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>" + error.message + "</p>");
+                showMsg();
                 console.log(error);
-                this.setState({isAuthenticated: false});
+                this.setState({isAuthenticated: false, loading: false});
             },
             newPasswordRequired: (userAttributes, requiredAttributes) => {
                 delete userAttributes.email_verified;
@@ -65,10 +72,20 @@ class Login extends Component {
     }
 
     render() {
+
+        if (this.state.loading) {
+            document.getElementById("root").className = "blur";
+            document.getElementById('loader').className = "loader";
+            document.getElementById("loadingScreen").style.visibility = "visible";
+        }
+        else {
+            document.getElementById("root").className = "";
+            document.getElementById('loader').className = "";
+            document.getElementById("loadingScreen").style.visibility = "hidden";
+        }
         if (this.state.isAuthenticated) {
             return <Redirect to="/"/>;
         }
-
         return (
             <div id="login_container">
                 <div>
