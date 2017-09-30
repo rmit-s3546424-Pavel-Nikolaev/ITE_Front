@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { getDocumentS3Request, buildS3RequestData } from './utils/utilities';
+
+import settings from './utils/config';
 
 class Uploader extends Component {
     constructor(props) {
         super(props);
+        this.credentials = localStorage.getItem('session');
+        const isAuthenticated = this.credentials ? true : false;
+
+        this.state = {
+            uploading: false,
+            success: false, 
+            failure: false,
+            isAuthenticated: isAuthenticated
+        };
+
         this.onFileChange = this.onFileChange.bind(this);
         this.onUpload = this.onUpload.bind(this);
-        this.credentials = localStorage.getItem('session');
-        this.state = {uploading: false, success: false, failure: false};
     }
 
     componentDidMount() {
@@ -26,6 +37,7 @@ class Uploader extends Component {
             this.setState({uploading: false, success: false, failure: false});
             return false;
         }
+
         let files = event.target.files;
         for (let file of files) {
             this.onUpload(file);
@@ -34,30 +46,30 @@ class Uploader extends Component {
 
     onUpload(file) {
         const params = {filename: file.name, file_type: file.type};
-        const request = getDocumentS3Request(this.props.host, this.props.apikey, params);
+        const request = getDocumentS3Request(settings.APIEndpoint, this.credentials, params);
 
         // Retrieve pre-signed request through API Gateway and authorising lambda
-        const signed_response = fetch(request).then((response) => {
-            return response.json();
+        const signed_response = request.then((response) => {
+            return response.data;
         }).catch((error) => {
             this.setState({uploading: false, success: false, failure: true});
-            return false;
         });
 
         signed_response.then((data) => {
             // Make direct upload to S3 bucket using signed URL
             const request = buildS3RequestData(data.data, file);
-            fetch(request).then((response) => {
+            request.then((response) => {
                 this.setState({uploading: false, success: true, failure: false});
-                //getting error here
-                // return response.json();
-            }).catch( (error) => {
+            }).catch((error) => {
                 this.setState({uploading: false, success: false, failure: true});
             });
         });
     }
 
-    render() {
+    render() {   
+        if (!this.state.isAuthenticated) {
+            return <Redirect to="/login"/>;
+        }
 
         let content = null;
         if (this.state.uploading) {
