@@ -20,7 +20,7 @@ ReactDOM.render((
                     <Route exact path='/' component={App} />
                     <Route exact path='/home' component={Home} />
                     <Route exact path='/login' component={Login} />
-                    <Route path='/upload' component={Uploader}  />
+                    <Route path='/upload' component={Uploader} />
                 </Switch>
             </main>
         </div>
