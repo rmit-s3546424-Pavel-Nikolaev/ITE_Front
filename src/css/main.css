@@ -243,6 +243,26 @@ h1 {
     letter-spacing: 4px;
 }
 
+#errorDiv {
+    background-color: #ff9999;
+    width: 100vw;
+    position: fixed;
+    top: 100px;
+    z-index: 5;
+}
+
+.errorMsg {
+    overflow: hidden;
+    display:block;
+    line-height: 45px;
+    height: 0;
+    position: relative;
+    text-align: center;
+    font-size: 17px !important;
+    color: #ef082e;
+    margin: 0;
+}
+
 @-webkit-keyframes loader {
     0% {
         -moz-transform: rotate(360deg);

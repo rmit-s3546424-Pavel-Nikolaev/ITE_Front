@@ -10,7 +10,8 @@
     "react-dom": "^15.6.1",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.12"
+    "react-scripts": "1.0.12",
+    "velocity-animate": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",

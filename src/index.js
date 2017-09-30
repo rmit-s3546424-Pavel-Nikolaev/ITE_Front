@@ -7,9 +7,17 @@ import Navbar from './js/navbar.jsx';
 import Home from './js/home';
 import Login from './js/login';
 import Uploader from './js/uploader';
+import {clearMsg} from './js/utils/utilities';
 
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
 import './css/index.css';
+
+
+const errors = document.getElementById("errorDiv");
+errors.onclick = () => {
+    clearMsg();
+};
+
 
 ReactDOM.render((
     <BrowserRouter >

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { getDocumentS3Request, buildS3RequestData } from './utils/utilities';
-
+import { getDocumentS3Request, buildS3RequestData, showMsg, clearMsg } from './utils/utilities';
+// import $ from 'jquery.animate';
 import settings from './utils/config';
 
 class Uploader extends Component {
@@ -22,13 +22,21 @@ class Uploader extends Component {
     }
 
     componentDidMount() {
-        let fGet = document.getElementById("fileGet");
-        let file = document.getElementById("picker");
+        if(this.state.isAuthenticated) {
+            let fGet = document.getElementById("fileGet");
+            let file = document.getElementById("picker");
 
-        fGet.onclick = () => {
-            file.click();
-            return false;
-        };
+            fGet.onclick = () => {
+                file.click();
+                return false;
+            };
+        }
+        else{
+            const errors = document.getElementById("errorDiv");
+            clearMsg();
+             errors.insertAdjacentHTML("beforeend","<p class='errorMsg'>" + "Please login to upload files" + "</p>");
+            showMsg();
+        }
     }
 
     onFileChange(event) {
