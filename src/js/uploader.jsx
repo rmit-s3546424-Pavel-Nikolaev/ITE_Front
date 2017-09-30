@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { getDocumentS3Request, buildS3RequestData, showMsg, clearMsg } from './utils/utilities';
-// import $ from 'jquery.animate';
 import settings from './utils/config';
 
 class Uploader extends Component {
