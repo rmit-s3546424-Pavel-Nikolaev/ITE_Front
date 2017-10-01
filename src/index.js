@@ -6,6 +6,7 @@ import Navbar from './js/navbar.jsx';
 import Home from './js/home';
 import Login from './js/login';
 import Uploader from './js/uploader';
+import ShowTab from './js/show-tab';
 import {clearMsg} from './js/utils/utilities';
 
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
@@ -32,6 +33,7 @@ ReactDOM.render((
                 <Route exact path='/home' component={Home}/>
                 <Route exact path='/login' component={Login}/>
                 <Route path='/upload' component={Uploader}/>
+                <Route path='/tab' component={ShowTab}/>
             </Switch>
         </div>
     </BrowserRouter>
