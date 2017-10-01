@@ -1,0 +1,9 @@
+@import './library/music-file.css';
+@import './library/sidebar.css';
+@import './library/tab.css';
+
+#library {
+    display: flex;
+    /* TODO: I have nfi why this doesn't fill the parent's space */
+    height: 100%;
+}

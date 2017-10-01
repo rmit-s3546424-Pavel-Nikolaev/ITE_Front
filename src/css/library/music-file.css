@@ -1,0 +1,22 @@
+#file-view {
+    flex-basis: calc(100% - 224px);    
+    max-width: 1000px; /* This wouldn't exist in the real app */
+    padding: 32px 28px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.title h2 {
+    font-size: 32px;
+    color: #404040;
+}
+
+.title h4 {
+    margin-left: auto;
+    font-size: 22px;
+    color: #404040;
+}

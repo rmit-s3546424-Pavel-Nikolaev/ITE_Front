@@ -1,0 +1,54 @@
+#sidebar {
+    width: 275px;
+    margin-bottom: 0;
+    padding: 16px 0;
+    background-color: #F2F2F2;
+}
+
+#upload {
+    display: block;
+    margin: 0 auto 14px auto;
+    padding: 8px 20px;
+    
+    font-size: 16px;
+}
+
+#file-tree {
+    font-size: 14px;
+}
+
+/* Handles indenting children */
+/* The way Google Drive handles this issue is to use invisible blocks */
+.folder-container .file-music, .folder-container .folder-container {
+    padding-left: 34px;
+}
+
+/* Styles for each file */
+.file-folder, .file-music {
+    padding: 8px 14px 8px 14px;
+    cursor: pointer;
+}
+
+.file-folder:hover, .file-music:hover {
+    background-color: #E3E3E3;
+}
+
+.fa-folder, .fa-music {
+    margin-right: 15px;
+    font-size: 18px;
+    color: #828282;
+}
+
+.fa-caret-down {
+    margin-right: 12px;
+    font-size: 15px;
+    color: #828282;
+}
+
+.selected {
+    background-color: #E3E3E3;
+}
+
+.selected .fa {
+    color: #07D078;
+}
