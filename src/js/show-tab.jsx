@@ -3,8 +3,6 @@ import notes from './tabs/example'
 import Vex from 'vexflow';
 import VexFlow from './components/vexflow'
 
-let VF = Vex.Flow;
-
 class ShowTab extends Component {
     constructor(props) {
         super(props);
