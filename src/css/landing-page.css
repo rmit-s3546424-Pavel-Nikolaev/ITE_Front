@@ -9,11 +9,19 @@ section {
     justify-content: center;
     align-items: center;
     height: 560px;
+}
 
-    /* TODO: Requires darkening the image by 30% */
+#splash-image {
+    position: absolute;
+    top: -1px;  /* Clear weird 1px border */
+    left: -1px; /* Clear weird 1px border */
+    height: 100%;
+    width: 100%;
+    z-index: -1;
     background-image: url("../img/kelly-sikkema-216021.jpg");
     background-position: 81% 41%;
     background-repeat: no-repeat;
+    filter: brightness(0.8);    
 }
 
 #hero h1 {
@@ -38,17 +46,24 @@ section {
 }
 
 #demo {
+    position: relative;
     display: flex;
     align-items: center;
     border-radius: 5px;
     width: 747px;
     height: 531px;
+}
 
-    /* TODO: Requires darkening the image by 40% */
+#demo-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
     background-image: url("../img/uploader.png");
     background-position: center; 
     background-repeat: no-repeat;
     background-size:contain;
+    filter: brightness(0.6);
 }
 
 #wip-banner {
