@@ -81,7 +81,7 @@ h1 {
     visibility: hidden;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     z-index: 5;
     width: 100vw;
     height: 100vh;
@@ -108,30 +108,30 @@ h1 {
     background-repeat: no-repeat;
 }
 
-#progressBar{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:45px;
+#progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
     border-bottom: 2px solid #222222;
 }
 
-#totalProg{
-    height:100%;
-    width:0;
+#totalProg {
+    height: 100%;
+    width: 0;
     background-color: #07d078;
 }
 
-#loadingMessage{
-    position:absolute;
-    top:40%;
+#loadingMessage {
+    position: absolute;
+    top: 40%;
     width: 100%;
     text-align: center;
     font-size: 22px;
 }
 
-.loader{
+.loader {
     -webkit-animation: loader 1.1s infinite linear;
     -moz-animation: loader 1.1s infinite linear;
     -o-animation: loader 1.1s infinite linear;
@@ -157,13 +157,6 @@ h1 {
 }
 
 /*---------- HOME PAGE --------------*/
-
-#root, #main, #mainMain, body {
-    overflow-y: overlay;
-}
-
-#mainMain {
-}
 
 #main {
     position: relative;
@@ -291,24 +284,38 @@ h1 {
     letter-spacing: 4px;
 }
 
-#errorDiv {
-    background-color: #ff9999;
+#errorDiv, #zuccDiv {
     width: 100vw;
     position: fixed;
     top: 100px;
     z-index: 3;
 }
 
-.errorMsg {
+#zuccDiv {
+    background-color: #07d078;
+}
+
+#errorDiv {
+    background-color: #ff9999;
+}
+
+.errorMsg, .succMsg {
     overflow: hidden;
-    display:block;
+    display: block;
     line-height: 45px;
     height: 0;
     position: relative;
     text-align: center;
     font-size: 17px !important;
-    color: #ef082e;
     margin: 0;
+}
+
+.succMsg {
+    color: white;
+}
+
+.errorMsg {
+    color: #ef082e;
 }
 
 @-webkit-keyframes loader {

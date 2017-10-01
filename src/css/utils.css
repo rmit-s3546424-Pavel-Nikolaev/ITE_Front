@@ -19,3 +19,7 @@
     box-shadow: 0 0 #ab3c3c;
     top: 3px;
 }
+
+.no-padding {
+    padding: 0;
+}

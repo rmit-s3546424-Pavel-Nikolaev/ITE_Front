@@ -28,6 +28,8 @@ class Login extends Component {
         this.onEmailChange = this.onEmailChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
         this.onLogin = this.onLogin.bind(this);
+        document.getElementById("totalProg").style.visibility = "hidden";
+        document.getElementById("loadingMessage").style.visibility = "hidden";
     }
 
     onEmailChange(event) {
@@ -72,7 +74,6 @@ class Login extends Component {
     }
 
     render() {
-
         if (this.state.loading) {
             document.getElementById("root").className = "blur";
             document.getElementById('loader').className = "loader";

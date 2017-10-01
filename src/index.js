@@ -19,6 +19,11 @@ errors.onclick = () => {
     clearMsg();
 };
 
+const msg = document.getElementById("zuccDiv");
+msg.onclick = () => {
+    clearMsg(false, true);
+};
+
 
 ReactDOM.render((
     <BrowserRouter >
