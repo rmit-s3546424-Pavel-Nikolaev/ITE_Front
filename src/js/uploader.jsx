@@ -18,11 +18,13 @@ class Uploader extends Component {
 
         this.onFileChange = this.onFileChange.bind(this);
         this.onUpload = this.onUpload.bind(this);
+        this.listen = this.listen.bind(this);
         document.getElementById("totalProg").style.visibility = "inherit";
         document.getElementById("loadingMessage").style.visibility = "inherit";
     }
 
     componentDidMount() {
+        this.listen();
         if (this.state.isAuthenticated) {
             let fGet = document.getElementById("fileGet");
             let file = document.getElementById("picker");
@@ -38,6 +40,29 @@ class Uploader extends Component {
             errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>Please login to upload files</p>");
             showMsg();
         }
+    }
+
+    // will automatically take user to login if
+    // sessions is expired/deleted
+    listen() {
+        let interval = setInterval(() => {
+            let token = localStorage.getItem('session');
+            if (token == null) {
+                const errors = document.getElementById("errorDiv");
+                clearMsg();
+                errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>Please login to upload files</p>");
+                showMsg();
+                this.setState({
+                    isAuthenticated: false
+                });
+                clearInterval(interval);
+            }
+            else {
+                this.setState({
+                    isAuthenticated: true
+                });
+            }
+        }, 50);
     }
 
     onFileChange(event) {
@@ -59,8 +84,12 @@ class Uploader extends Component {
 
         // Retrieve pre-signed request through API Gateway and authorising lambda
         const signed_response = request.then((response) => {
-            if(response.status === 200){ return response.data; }
-            else{ return null; }
+            if (response.status === 200) {
+                return response.data;
+            }
+            else {
+                return null;
+            }
         }).catch((error) => {
             this.setState({uploading: false});
             return null;
@@ -92,7 +121,6 @@ class Uploader extends Component {
         if (!this.state.isAuthenticated) {
             return <Redirect to="/login"/>;
         }
-
         let content = null;
         if (this.state.uploading) {
             document.getElementById("root").className = "blur";
