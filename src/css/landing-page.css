@@ -25,12 +25,14 @@ section {
 }
 
 #hero h1 {
+    z-index: 1;
     font-size: 42px;
     color: white;
     margin: 0;
 }
 
 #hero h3 {
+    z-index: 1;
     max-width: 800px;
     margin: 32px 0 110px 0;
     text-align: center;

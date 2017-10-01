@@ -34,16 +34,12 @@ export default class Navbar extends React.Component {
         let link = "";
         let myFiles = "";
         if (this.state.isAuth) {
-            myFiles = (<Link to="/my-files" className="nav-item">My Files</Link>);
-            link = (<Link to="/upload" id="nav-signup" className="nav-item nav-right button">Upload</Link>);
+            myFiles = (<Link to="/tab" className="nav-item">My Files</Link>);
+            link = (<Link to="/upload" id="nav-signup" className="nav-item nav-right">Upload</Link>);
         }
         else {
             link = (
-                <div className="nav-item nav-right no-padding">
-                    <Link to="/login" className="nav-item nav-right nav-item-norm">Log in</Link>
-                    {/* Below will be a sign up link, however during development it links to the upload page */}
-                    <Link to="/upload" id="nav-signup" className="nav-item nav-right button">Sign Up / Upload</Link>
-                </div>
+                <Link to="/login"  className="nav-item nav-right login">Log in</Link>
             );
         }
         return (

@@ -6,20 +6,12 @@ export default class Home extends React.Component {
         super(props)
     }
 
-    componentWillMount(){
-
-    }
-
-    componentDidMount(){
-
-    }
-
     render(){
-
         return(
             <div>
                 <section id="hero">
                     <img id="splash-image" />
+                    <div id="makeImageDarkerSoThatWeCanReadTheTextBetter"></div>
                     <h1>Transform your sheet music into tabs</h1>
                     <h3>Tabby takes your existing music notation files and creates easy to read tabs, making it so you can focus on the fun.</h3>
                     <button className="button">Try Tabby For Free</button>

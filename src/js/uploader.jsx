@@ -92,22 +92,22 @@ class Uploader extends Component {
                 return response.data;
             }
             else {
-                return null;
+                return Promise.resolve(null);
             }
         }).catch((error) => {
             this.setState({uploading: false});
-            return null;
+            return Promise.resolve(null);
         });
 
-        if (signed_response === null) {
-            const errors = document.getElementById("errorDiv");
-            clearMsg();
-            errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>Failure while uploading</p>");
-            showMsg();
-            return false;
-        }
 
         signed_response.then((data) => {
+            if(data === null){
+                const errors = document.getElementById("errorDiv");
+                clearMsg();
+                errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>Failure while uploading</p>");
+                showMsg();
+                return;
+            }
             // Make direct upload to S3 bucket using signed URL
             const request = buildS3RequestData(data.data, file);
             request.then((response) => {
