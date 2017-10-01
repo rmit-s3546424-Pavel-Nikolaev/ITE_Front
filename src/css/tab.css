@@ -1,0 +1,28 @@
+.tab {
+    margin: auto;
+    max-width: 400px;
+    border: 1px solid grey;
+    margin-top: 20px;
+}
+
+.tab-header {
+    border-bottom: 1px solid grey;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.tab-title {
+    margin-left: 20px;
+}
+
+/* Push nav-right items together */
+.tab-download-button {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.vexflow {
+    text-align: center;
+    margin: 20px;
+}
