@@ -8,6 +8,7 @@ import Home from './js/home';
 import Footer from './js/footer';
 import Login from './js/login';
 import Uploader from './js/uploader';
+import ShowTab from './js/show-tab';
 import MyFiles from './js/my_files';
 import {clearMsg} from './js/utils/utilities';
 
@@ -36,7 +37,7 @@ ReactDOM.render((
                     <Route exact path='/home' component={Home}/>
                     <Route exact path='/login' component={Login}/>
                     <Route path='/upload' component={Uploader}/>
-                    <Route path='/my-files' component={MyFiles}/>
+                    <Route path='/tab' component={ShowTab}/>
                 </Switch>
             </div>
             <Footer />
