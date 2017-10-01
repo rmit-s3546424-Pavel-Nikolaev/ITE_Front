@@ -4,32 +4,45 @@ import {Link} from 'react-router-dom';
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props)
-    }
-
-    componentWillMount() {
-
+        this.state = {isAuth: false};
+        this.listen = this.listen.bind(this);
     }
 
     componentDidMount() {
-
+        this.listen();
     }
 
+    listen() {
+        // display different navbar when user has logged in
+        setInterval(() => {
+            let token = localStorage.getItem('session');
+            if (token == null) {
+                this.setState({
+                    isAuth: false
+                });
+            }
+            else {
+                this.setState({
+                    isAuth: true
+                });
+            }
+        }, 50);
+    }
+
+
     render() {
-
-
-        // let link = "";
-        // if (this.state.isAuth) {
-        //     link = (<li><Link to="/Profile" className="navLinks">Profile</Link></li>);
-        // }
-        // else {
-        //     link = (<li><Link to="/login" className="navLinks">Login</Link></li>);
-        // }
+        let link = "";
+        if (this.state.isAuth) {
+            link = (<Link to="/upload" className="nav-item">Upload</Link>);
+        }
+        else {
+            link = (<Link to="/login" className="nav-item">Login</Link>);
+        }
         return (
             <div className="nav-container">
                 <Link to="/home" className="nav-item">Home</Link>
                 <a className="nav-item">About</a>
-                <Link to="/upload" className="nav-item">Uploader</Link>
-                <Link to="/login" className="nav-item">Login</Link>
+                {link}
             </div>
         )
     }
