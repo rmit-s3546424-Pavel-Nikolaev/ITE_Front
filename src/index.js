@@ -8,6 +8,7 @@ import Home from './js/home';
 import Footer from './js/footer';
 import Login from './js/login';
 import Uploader from './js/uploader';
+import MyFiles from './js/my_files';
 import {clearMsg} from './js/utils/utilities';
 
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
@@ -35,6 +36,7 @@ ReactDOM.render((
                     <Route exact path='/home' component={Home}/>
                     <Route exact path='/login' component={Login}/>
                     <Route path='/upload' component={Uploader}/>
+                    <Route path='/my-files' component={MyFiles}/>
                 </Switch>
             </div>
             <Footer />
