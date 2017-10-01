@@ -100,6 +100,7 @@ class Uploader extends Component {
             clearMsg();
             errors.insertAdjacentHTML("beforeend", "<p class='errorMsg'>Failure while uploading</p>");
             showMsg();
+            return false;
         }
 
         signed_response.then((data) => {
