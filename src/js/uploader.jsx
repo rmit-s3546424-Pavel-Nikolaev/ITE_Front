@@ -45,7 +45,7 @@ class Uploader extends Component {
     // will automatically take user to login if
     // sessions is expired/deleted
     listen() {
-        let interval = setInterval(() => {
+        this.interval = setInterval(() => {
             let token = localStorage.getItem('session');
             if (token == null) {
                 const errors = document.getElementById("errorDiv");
@@ -55,7 +55,7 @@ class Uploader extends Component {
                 this.setState({
                     isAuthenticated: false
                 });
-                clearInterval(interval);
+                clearInterval(this.interval);
             }
             else {
                 this.setState({
@@ -63,6 +63,10 @@ class Uploader extends Component {
                 });
             }
         }, 50);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
     }
 
     onFileChange(event) {
