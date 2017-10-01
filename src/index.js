@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
+// Components
 import Navbar from './js/navbar.jsx';
 import Home from './js/home';
+import Footer from './js/footer';
 import Login from './js/login';
 import Uploader from './js/uploader';
 import ShowTab from './js/show-tab';
+import MyFiles from './js/my_files';
 import {clearMsg} from './js/utils/utilities';
 
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
@@ -26,15 +29,18 @@ msg.onclick = () => {
 
 ReactDOM.render((
     <BrowserRouter >
-        <div>
+        <div id="react-container">
             <Navbar />
-            <Switch>
-                <Route exact path='/' component={Home}/>
-                <Route exact path='/home' component={Home}/>
-                <Route exact path='/login' component={Login}/>
-                <Route path='/upload' component={Uploader}/>
-                <Route path='/tab' component={ShowTab}/>
-            </Switch>
+            <div id="content">
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route exact path='/home' component={Home}/>
+                    <Route exact path='/login' component={Login}/>
+                    <Route path='/upload' component={Uploader}/>
+                    <Route path='/tab' component={ShowTab}/>
+                </Switch>
+            </div>
+            <Footer />
         </div>
     </BrowserRouter>
 ), document.getElementById('root'));

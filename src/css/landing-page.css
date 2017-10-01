@@ -1,0 +1,82 @@
+section {
+    margin-bottom: 80px;
+}
+
+#hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 560px;
+}
+
+#splash-image {
+    position: absolute;
+    top: -1px;  /* Clear weird 1px border */
+    left: -1px; /* Clear weird 1px border */
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url("../img/kelly-sikkema-216021.jpg");
+    background-position: 81% 41%;
+    background-repeat: no-repeat;
+    filter: brightness(0.8);    
+}
+
+#hero h1 {
+    font-size: 42px;
+    color: white;
+    margin: 0;
+}
+
+#hero h3 {
+    max-width: 800px;
+    margin: 32px 0 110px 0;
+    text-align: center;
+
+    font-size: 22px;
+    color: white;
+}
+
+#showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#demo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    width: 747px;
+    height: 531px;
+}
+
+#demo-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url("../img/uploader.png");
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size:contain;
+    filter: brightness(0.6);
+}
+
+#wip-banner {
+    width: 100%;
+    padding: 70px 0;
+    text-align: center;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    background-color: white;  
+
+    font-size: 18px;
+    color: #404040;
+}
+
+#showcase button {
+    margin-top: 55px;
+}
