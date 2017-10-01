@@ -32,8 +32,10 @@ export default class Navbar extends React.Component {
 
     render() {
         let link = "";
+        let myFiles = "";
         if (this.state.isAuth) {
             link = (<Link to="/upload" className="nav-item">Upload</Link>);
+            myFiles = (<Link to="/my-files" className="nav-item">My Files</Link>);
         }
         else {
             link = (<Link to="/login" className="nav-item">Login</Link>);
@@ -43,6 +45,7 @@ export default class Navbar extends React.Component {
                 <Link to="/home" className="nav-item">Home</Link>
                 <a className="nav-item">About</a>
                 {link}
+                {myFiles}
             </div>
         )
     }
