@@ -1,0 +1,25 @@
+.button {
+    position: relative;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.25);  
+    background-color: #07D078;
+
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    outline: none;
+}
+
+.button:active {
+    box-shadow: 0 0 #ab3c3c;
+    top: 3px;
+}
+
+.no-padding {
+    padding: 0;
+}

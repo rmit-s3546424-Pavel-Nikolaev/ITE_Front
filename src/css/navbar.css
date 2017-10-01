@@ -1,57 +1,87 @@
-
+#nav-site {
+    display: flex;
+    justify-content: center;
+    height: 68px;
+    background-color: #333;
+}
 
 .nav-container {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    width:100%;
-    height: 100px;
-    background-color: #333333;
+    align-items: center;
+    max-width: 80%;
     flex-grow: 1;
 }
 
+.nav-item.nav-right {
+    margin-left: auto;
+}
 
-
-/*.nav-right {*/
-    /*margin-left: auto;*/
-/*}*/
-
-/*!* Push nav-right items together *!*/
-/*.nav-right + .nav-right {*/
-    /*margin-left: 0;*/
-/*}*/
+/* Push nav-right items together */
+.nav-right + .nav-right {
+    margin-left: 30px;
+}
 
 .nav-item {
     position: relative; /* For hover effect */
-    flex-basis: 150px;
-    font-size: 19px;
-    font-weight:500;
-    text-align: center;
-    line-height:105px;
-    font-family: 'Pathway Gothic One', sans-serif;
+    padding: 12px;  
+        
+    font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
-    color: silver;
-    transition: color, background-color, 0.5s
+    color: white;
+
+    transition: color, background-color 0.3s; /* Gets prefixed by build pipeline */
 }
 
-.nav-item:hover, .nav-item:focus {
+.nav-item-norm:hover {
     color: white;
-    background-color: #383838;
 }
 
 /* For hover effect */
-.nav-item::after {
+.nav-item-norm::after {
     position: absolute;
-    background:#07d078;
+    background: #07D078;
     content: '';
-    bottom: 0;
-    height: 0;
-    left: 0;
-    width: 100%;
-    transition: height 300ms;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 75%;
 }
 
-.nav-item:hover::after, .nav-item:focus::after {
-    height: 5px;
+.nav-item:hover::after {
+    height: 1px;
+}
+
+
+#nav-logo {
+    /* Filling in for logo */
+    width: 45px;
+    height: 41px;
+    background-color: #07D078;
+    border-radius: 50%;
+    /* End of filling in for logo */
+}
+
+#nav-brand {
+    margin-left: 15px;
+    text-transform: none;
+    
+    font-size: 18px;
+    color: #07D078;
+}
+
+#nav-signup {
+    padding: 9px 26px;
+    border: 1px solid #07D078;
+    box-shadow: none;
+    background-color: #333;
+
+    color: #07D078;
+    font-size: 13px;
+}
+
+#nav-signup:hover {
+    background-color: #07D078;
+    
+    color: white;
 }
