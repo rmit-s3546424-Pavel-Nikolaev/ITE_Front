@@ -17,21 +17,22 @@ export default class Home extends React.Component {
     render(){
 
         return(
-         <div id="mainMain">
-            <div id="main" className="shadow">
-                <div id="massiveGoddamnLogo" className="shadow">
-                    <h3 id="homeLogo">TABBR LOGO HERE</h3>
-                </div>
+            <div>
+                <section id="hero">
+                    <img id="splash-image" />
+                    <h1>Transform your sheet music into tabs</h1>
+                    <h3>Tabby takes your existing music notation files and creates easy to read tabs, making it so you can focus on the fun.</h3>
+                    <button className="button">Try Tabby For Free</button>
+                </section>
+
+                <section id="showcase">
+                    <div id="demo">
+                        <img id="demo-image" />
+                        <div id="wip-banner">We’re working on this right now!</div>
+                    </div>
+                    <button className="button">Create Some Tabs</button>
+                </section>
             </div>
-             <div id="sub" className="shadow">
-                 <div className="homeOption shadow" id="op1"><h3>Tabs for Guitar</h3></div>
-                 <div className="homeOption shadow" id="op2"><h3>tabs for Bass</h3></div>
-                 <div className="homeOption shadow" id="op3"><h3>Music Theory</h3></div>
-                 <div className="homeOption shadow" id="op4"><h3>Videos</h3></div>
-                 <div className="homeOption shadow" id="op5"><h3>News</h3></div>
-                 <div className="homeOption shadow" id="op6"><h3>Other random page</h3></div>
-             </div>
-         </div>
         )
     }
 }

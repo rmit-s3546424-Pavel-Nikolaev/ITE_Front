@@ -26,6 +26,26 @@ h1 {
     text-align: center;
 }
 
+/*------------REACT BODY------------*/
+
+#root, #react-container {
+    height: 100%;
+}
+
+#react-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#react-container > * {
+    /* Prevent children from being consumed by #content */
+    flex-shrink: 0;
+}
+
+#content {
+    flex-grow: 1;
+}
+
 /*------------UPLOADER------------*/
 .uploader_input {
     display: none;
