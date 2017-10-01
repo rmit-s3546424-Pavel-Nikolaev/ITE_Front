@@ -30,8 +30,9 @@ export default class Navbar extends React.Component {
                     <Link to="/home" id="nav-logo"></Link>
                     <Link to="/home" id="nav-brand" className="nav-item">Tabby</Link>
                     
-                    <Link to="/upload" className="nav-item nav-right nav-item-norm">Log in</Link>
-                    <Link to="/login" id="nav-signup" className="nav-item nav-right button">Sign Up</Link>
+                    <Link to="/login" className="nav-item nav-right nav-item-norm">Log in</Link>
+                    {/* Below will be a sign up link, however during development it links to the upload page */}
+                    <Link to="/upload" id="nav-signup" className="nav-item nav-right button">Sign Up / Upload</Link>
                 </div>
             </nav>
         )
