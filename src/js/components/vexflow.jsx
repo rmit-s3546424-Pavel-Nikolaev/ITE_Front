@@ -44,7 +44,7 @@ export default class VexFlow extends Component {
     render() {
 
         return (
-            <div ref={'wrapper'}></div>
+            <div className='vexflow' ref={'wrapper'}></div>
         );
     }
 }
