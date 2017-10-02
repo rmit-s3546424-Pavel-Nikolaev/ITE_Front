@@ -5,7 +5,7 @@ import TreeFolder from './tree-folder';
 export default class SideBar extends React.Component {
     render() {
         return (
-            <section id="sidebar">
+            <div id="sidebar">
                 <a id="upload" className="uploader_button">Upload Music</a>
                 <div id="file-tree">
                     <div className="folder-container">
@@ -21,7 +21,7 @@ export default class SideBar extends React.Component {
                     <TreeFile title="Let the Bodies Hit th..." />
                     <TreeFile title="Mary Had a Little Lam..." />
                 </div>
-            </section>
+            </div>
         )
     }
 }

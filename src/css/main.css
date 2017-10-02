@@ -29,23 +29,27 @@ h1 {
 /*------------REACT BODY------------*/
 
 #root, #react-container {
-    height: 100%;
+    height:100%;
 }
 
 #react-container {
-    display: flex;
-    flex-direction: column;
-}
-
-#react-container > * {
-    /* Prevent children from being consumed by #content */
-    flex-shrink: 0;
-}
-
-#content {
-    flex-grow: 1;
     position: relative;
 }
+
+/*
+hacky af
+ */
+#content{
+    min-height: calc(100% - 155px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#content > *{
+    flex-basis: 100%;
+}
+
 
 /*------------UPLOADER------------*/
 .uploader_input {
@@ -64,7 +68,7 @@ h1 {
     transition: background-color 300ms;
 }
 
-.uploader_button:hover{
+.uploader_button:hover {
     background-color: #08dd81;
 }
 
@@ -334,7 +338,7 @@ h1 {
     color: #ef082e;
 }
 
-.ghost-btn{
+.ghost-btn {
     font-family: 'Pathway Gothic One', sans-serif;
     font-size: 22px;
     padding: 0;
@@ -352,19 +356,20 @@ h1 {
 
 .ghost-btn:before {
     position: absolute;
-    content:'';
-    left:0;
+    content: '';
+    left: 0;
     z-index: -1;
     background-color: #07D078;
-    height:100%;
-    width:0;
+    height: 100%;
+    width: 0;
     transition: width 300ms;
 }
+
 .ghost-btn:hover:before {
     width: 100%;
 }
 
-#ehh{
+#ehh {
     margin-top: 40px;
 }
 

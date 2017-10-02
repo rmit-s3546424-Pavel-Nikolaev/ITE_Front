@@ -42,7 +42,7 @@ ReactDOM.render((
                     <Route path='/library' component={Library}/>
                 </Switch>
             </div>
-            <Footer />
+            <Footer/>
         </div>
     </BrowserRouter>
 ), document.getElementById('root'));
