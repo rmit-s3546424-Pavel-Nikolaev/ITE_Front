@@ -1,11 +1,10 @@
 import React from 'react';
+import {clearMsg} from './utils/utilities';
 
 export default class Home extends React.Component {
-
-    constructor(props){
-        super(props)
+    componentDidMount() {
+        clearMsg();
     }
-
     render(){
         return(
             <div>
