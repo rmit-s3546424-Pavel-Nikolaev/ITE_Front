@@ -10,7 +10,6 @@
     box-shadow: none;
     box-sizing: border-box;
     font-family: 'Pathway Gothic One', sans-serif;
-    text-transform: uppercase;
 }
 
 .field {
@@ -33,8 +32,7 @@
 
 
 #login_container {
-      font-family: 'Pathway Gothic One', sans-serif;
-    text-transform: uppercase;
+    font-family: 'Pathway Gothic One', sans-serif;
     height: 600px;
     display: flex;
     flex-direction: row;
