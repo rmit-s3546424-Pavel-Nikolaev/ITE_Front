@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Config as AWSConfig, CognitoIdentityCredentials} from 'aws-sdk';
 import {CognitoUserPool, CognitoUser, AuthenticationDetails} from 'amazon-cognito-identity-js';
 import {Redirect} from 'react-router-dom';
-import {clearMsg, showMsg} from './utils/utilities'
+import {clearMsg, showMsg} from './utils/utilities';
 import settings from './utils/config';
 
 AWSConfig.region = settings.region;
@@ -30,6 +30,10 @@ class Login extends Component {
         this.onLogin = this.onLogin.bind(this);
         document.getElementById("totalProg").style.visibility = "hidden";
         document.getElementById("loadingMessage").style.visibility = "hidden";
+    }
+
+    componentDidMount() {
+        clearMsg();
     }
 
     onEmailChange(event) {

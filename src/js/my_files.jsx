@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {clearMsg} from './utils/utilities';
 
 class MyFiles extends Component {
     constructor(props) {
@@ -7,7 +8,11 @@ class MyFiles extends Component {
         this.onRefresh();
         this.files = [];
     }
-    
+
+    componentDidMount() {
+        clearMsg();
+    }
+
     onRefresh() {
         // Placeholder until we have the lamda
         return null;

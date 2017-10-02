@@ -24,6 +24,7 @@ class Uploader extends Component {
     }
 
     componentDidMount() {
+        clearMsg();
         this.listen();
         if (this.state.isAuthenticated) {
             let fGet = document.getElementById("fileGet");
