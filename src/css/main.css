@@ -44,6 +44,7 @@ h1 {
 
 #content {
     flex-grow: 1;
+    position: relative;
 }
 
 /*------------UPLOADER------------*/
@@ -54,12 +55,17 @@ h1 {
 .uploader_button {
     display: block;
     width: 250px;
-    height: 50px;
-    line-height: 52px;
+    height: 60px;
+    line-height: 62px;
     text-align: center;
     background-color: #07d078;
-    color: #fefefe;
-    font-size: 18px;
+    color: white;
+    font-size: 22px;
+    transition: background-color 300ms;
+}
+
+.uploader_button:hover{
+    background-color: #08dd81;
 }
 
 .uploader_drag,
@@ -181,13 +187,12 @@ h1 {
     background-color: rgba(40, 40, 40, 0.6);
 }
 
-
-#makeImageDarkerSoThatWeCanReadTheTextBetter{
+#makeImageDarkerSoThatWeCanReadTheTextBetter {
     width: 100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 0;
     background-color: rgba(40, 40, 40, 0.6);
 }
@@ -327,6 +332,40 @@ h1 {
 
 .errorMsg {
     color: #ef082e;
+}
+
+.ghost-btn{
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 22px;
+    padding: 0;
+    width: 250px;
+    height: 60px;
+    color: white;
+    border: 2px solid white;
+    background-color: transparent;
+    position: relative;
+    outline: none;
+    z-index: 10;
+    line-height: 62px;
+    text-align: center;
+}
+
+.ghost-btn:before {
+    position: absolute;
+    content:'';
+    left:0;
+    z-index: -1;
+    background-color: #07D078;
+    height:100%;
+    width:0;
+    transition: width 300ms;
+}
+.ghost-btn:hover:before {
+    width: 100%;
+}
+
+#ehh{
+    margin-top: 40px;
 }
 
 @-webkit-keyframes loader {

@@ -3,7 +3,10 @@
 @import './library/tab.css';
 
 #library {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
     display: flex;
-    /* TODO: I have nfi why this doesn't fill the parent's space */
-    height: 100%;
+    height:100%;
 }

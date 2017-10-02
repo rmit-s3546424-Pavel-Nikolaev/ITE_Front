@@ -14,7 +14,7 @@ export default class Home extends React.Component {
                     <div id="makeImageDarkerSoThatWeCanReadTheTextBetter"></div>
                     <h1>Transform your sheet music into tabs</h1>
                     <h3>Tabby takes your existing music notation files and creates easy to read tabs, making it so you can focus on the fun.</h3>
-                    <button className="button">Try Tabby For Free</button>
+                    <a className="ghost-btn">Try Tabby For Free</a>
                 </section>
 
                 <section id="showcase">
@@ -22,7 +22,7 @@ export default class Home extends React.Component {
                         <img id="demo-image" />
                         <div id="wip-banner">We’re working on this right now!</div>
                     </div>
-                    <button className="button">Create Some Tabs</button>
+                    <a className="uploader_button" id="ehh">Create Some Tabs</a>
                 </section>
             </div>
         )

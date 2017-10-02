@@ -6,7 +6,7 @@ export default class SideBar extends React.Component {
     render() {
         return (
             <section id="sidebar">
-                <button id="upload" className="button">Upload Music</button>
+                <a id="upload" className="uploader_button">Upload Music</a>
                 <div id="file-tree">
                     <div className="folder-container">
                         <TreeFolder title="Pop music 2016" />

@@ -1,13 +1,14 @@
 #file-view {
-    flex-basis: calc(100% - 224px);    
-    max-width: 1000px; /* This wouldn't exist in the real app */
-    padding: 32px 28px;
+    flex-grow:1;
 }
 
 .title {
     display: flex;
-    align-items: center;
-    margin-bottom: 22px;
+    flex-direction: row;
+
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto 20px;
 }
 
 .title h2 {
@@ -16,7 +17,8 @@
 }
 
 .title h4 {
-    margin-left: auto;
+    line-height: 35px;
     font-size: 22px;
     color: #404040;
+    margin-left: 20px;
 }

@@ -1,15 +1,14 @@
 #sidebar {
     width: 275px;
     margin-bottom: 0;
-    padding: 16px 0;
-    background-color: #F2F2F2;
+    background-color: white;
+    height:100%;
 }
 
 #upload {
-    display: block;
-    margin: 0 auto 14px auto;
-    padding: 8px 20px;
-    
+    margin-bottom: 10px;
+    width:100%;
+    height: 60px;
     font-size: 16px;
 }
 
