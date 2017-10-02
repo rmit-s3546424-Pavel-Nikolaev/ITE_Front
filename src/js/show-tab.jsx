@@ -4,10 +4,6 @@ import Vex from 'vexflow';
 import VexFlow from './components/vexflow'
 
 class ShowTab extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
 render() {
     return (
         <div className='tab'>

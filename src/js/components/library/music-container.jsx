@@ -9,7 +9,7 @@ export default class MusicContainer extends Component {
             <div className='tab'>
                 <div className='tab-header'>
                     <div className='tab-title'>{this.props.type}</div>
-                    <a href="#" className='tab-download-button'>Download</a>
+                    <a href="#download" className='tab-download-button'>Download</a>
                 </div>
                 <VexFlow
                     height={80}

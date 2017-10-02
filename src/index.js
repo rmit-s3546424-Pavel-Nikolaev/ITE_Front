@@ -9,7 +9,6 @@ import Footer from './js/footer';
 import Login from './js/login';
 import Uploader from './js/uploader';
 import ShowTab from './js/show-tab';
-import MyFiles from './js/my_files';
 import Library from './js/components/library.jsx';
 import {clearMsg} from './js/utils/utilities';
 
