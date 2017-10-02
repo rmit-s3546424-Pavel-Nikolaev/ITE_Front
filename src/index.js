@@ -10,6 +10,7 @@ import Login from './js/login';
 import Uploader from './js/uploader';
 import ShowTab from './js/show-tab';
 import MyFiles from './js/my_files';
+import Library from './js/components/library.jsx';
 import {clearMsg} from './js/utils/utilities';
 
 import registerServiceWorker from './js/utils/registerServiceWorker.js';
@@ -38,6 +39,7 @@ ReactDOM.render((
                     <Route exact path='/login' component={Login}/>
                     <Route path='/upload' component={Uploader}/>
                     <Route path='/tab' component={ShowTab}/>
+                    <Route path='/library' component={Library}/>
                 </Switch>
             </div>
             <Footer />
