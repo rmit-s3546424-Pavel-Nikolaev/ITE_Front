@@ -32,10 +32,6 @@ class Login extends Component {
         document.getElementById("loadingMessage").style.visibility = "hidden";
     }
 
-    componentDidMount() {
-        clearMsg();
-    }
-
     onEmailChange(event) {
         this.setState({email: event.target.value});
     }

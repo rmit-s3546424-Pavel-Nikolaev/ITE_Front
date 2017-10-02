@@ -9,10 +9,6 @@ class MyFiles extends Component {
         this.files = [];
     }
 
-    componentDidMount() {
-        clearMsg();
-    }
-
     onRefresh() {
         // Placeholder until we have the lamda
         return null;

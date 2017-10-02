@@ -3,11 +3,7 @@ import notes from './tabs/example'
 import Vex from 'vexflow';
 import VexFlow from './components/vexflow'
 
-class ShowTab extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
+class ShowTab extends Component{
 render() {
     return (
         <div className='tab'>
